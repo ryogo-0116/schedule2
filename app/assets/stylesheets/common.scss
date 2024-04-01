@@ -1,0 +1,112 @@
+body {
+    margin: 0; 
+    padding: 0; 
+}
+
+header {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.partial {
+    color: white;
+    background-color :darkblue;
+    text-align: center;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.index {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+table {
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid darkblue;
+    padding: 8px;
+}
+
+table th {
+    padding: 10px 20px;
+    border-bottom: 2px solid gray;
+}
+
+table td {
+    padding: 10px 20px;
+}
+
+.notice {
+    background-color: orange;
+    padding: 5px;
+}
+
+.flash-message {
+    text-align: center;
+    background-color: orange;
+    padding: 5px;
+}
+
+.flash-message-edit {
+    text-align: center;
+    background-color: orange;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.error{
+    color: red;
+    font-size: 13px;
+}
+
+.botton-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.botton-container li {
+    display: inline-block;
+}
+
+.show-bottom {
+   margin-top: 20px;
+   text-align: center;
+}
+
+.edit-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
