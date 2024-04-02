@@ -1,0 +1,32 @@
+<h3 class="show-top">予定詳細</h3>
+
+<div class="t-container">
+ <table>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @task.title %></td>
+        </tr>
+        <tr>
+        <th>開始日</th>
+        <td><%= @task.start_date.strftime("%Y/%m/%d") %></td>
+        </tr>
+        <tr>
+        <th>終了日</th>
+        <td><%= @task.end_date.strftime("%Y/%m/%d") %></td>
+        </tr>
+        <tr>
+        <th>終日</th>
+        <td><%= @task.is_all_day ? '◯' : '' %></td>
+        </tr>
+        <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @task.memo %></td>
+    </tr>
+ </table>
+
+    <div class="show-bottom">
+        <ul>
+            <li><%= link_to "予定一覧に戻る", :tasks %></li>
+        </ul>
+    </div>
+</div>

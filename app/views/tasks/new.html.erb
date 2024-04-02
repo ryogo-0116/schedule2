@@ -1,0 +1,69 @@
+<h3 class="new-top">予定の新規追加</h3>
+
+<% flash.each do |message_type, message| %>
+    <div class="flash-message" <%= message_type %>"><%= message %></div>
+<% end %>
+
+<%= form_with model: @task do |f|%>
+    <table>
+
+        <tr>
+            <th><%= f.label :title ,"タイトル" %></th>
+            <td>
+                <%= f.text_field :title %>
+                <%if @task.errors.include?(:title)%>
+                    <div class="error"><%= @task.errors.full_messages_for(:title).first%></div>
+                <%end%>
+            </td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :start_date ,"開始日" %></th>
+            <td>
+                <div class="form-group">
+                    <%= f.text_field :start_date, class: 'form-control result', placeholder: 'YYYY/MM/DD', id: 'start-date-time' %>
+                    <%if @task.errors.include?(:start_date)%>
+                        <div class="error"><%= @task.errors.full_messages_for(:start_date).first%></div>
+                    <%end%>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :end_date ,"終了日" %></th>
+            <td>
+                <div class="form-group">
+                    <%= f.text_field :end_date, class: 'form-control result', placeholder: 'YYYY/MM/DD', id: 'end-date-time' %>
+                    <%if @task.errors.include?(:end_date)%>
+                        <div class="error"><%= @task.errors.full_messages_for(:end_date).first%></div>
+                    <%end%>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :is_all_day ,"終日の場合はチェックを入れてください" %></th>
+            <td><%= f.check_box :is_all_day %></td>
+        </tr>
+
+        <tr>
+            <th><%=f.label :memo ,"スケジュールメモ" %></th>
+            <td>
+                <%= f.text_area :memo %>
+                <%if @task.errors.include?(:memo)%>
+                    <div class="error"><%= @task.errors.full_messages_for(:memo).first%></div>
+                <%end%>
+            </td>
+        </tr>
+       
+    </table>
+
+    <div class="botton-container">
+        <ul>
+            <li><%= f.submit "保存"%></li>
+            /
+            <li><%= link_to "キャンセル", "/tasks" %></li>
+        </ul>
+    </div>
+<% end%> 
+
